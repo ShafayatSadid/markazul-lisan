@@ -1,27 +1,69 @@
 @import "tailwindcss";
-@import "@heroui/styles"; 
+@import "@heroui/styles";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.dark {
+  --background: #0B1511;
+  --foreground: #F1F5F2;
+  --surface: #12211A;
+  --border: #263A31;
+
+  --primary: #3BAA78;
+  --primary-hover: #4FBE8B;
+  --secondary: #D4B65A;
+  --text-muted: #9AAEA4;
+
+  --success: #43B97E;
+  --warning: #D6A94A;
+  --error: #E56B6B;
+  --info: #5B9BC2;
 }
 
 @theme inline {
+  --font-sans: var(--font-hind);
+  --font-serif: var(--font-noto-serif);
+  --font-english: var(--font-inter);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0B1511;
+    --foreground: #F1F5F2;
+    --surface: #12211A;
+    --border: #263A31;
+
+    --primary: #3BAA78;
+    --primary-hover: #4FBE8B;
+    --secondary: #D4B65A;
+    --text-muted: #9AAEA4;
+
+    --success: #43B97E;
+    --warning: #D6A94A;
+    --error: #E56B6B;
+    --info: #5B9BC2;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-hind)
+}
+
+h1, h2,h3{
+  font-family: var(--font-hind);
 }
