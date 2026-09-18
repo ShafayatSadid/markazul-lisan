@@ -1,5 +1,6 @@
 import { Hind_Siliguri, Noto_Serif_Bengali, Inter } from 'next/font/google';
 import "./globals.css";
+import NavBar from '@/components/shared/NavBar';
 
 const hindSiliguri = Hind_Siliguri({
   subsets: ['bengali', 'latin'],
@@ -33,7 +34,10 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${hindSiliguri.variable} ${notoSerifBengali.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <NavBar />
+        <main className="pt-20">{children}</main>
+      </body>
     </html>
   );
 }
