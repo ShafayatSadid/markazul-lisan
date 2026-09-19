@@ -9,12 +9,18 @@ import {
   useMotionValue,
   useTransform,
 } from "motion/react";
+import {
+  FaUserGraduate,
+  FaGlobe,
+  FaChalkboardTeacher,
+  FaBookOpen,
+} from "react-icons/fa";
 
 const stats = [
-  { value: 100, label: "শিক্ষার্থী" },
-  { value: 10, label: "দেশ" },
-  { value: 5, label: "শিক্ষক" },
-  { value: 20, label: "কোর্স" },
+  { value: 100, label: "শিক্ষার্থী", icon: FaUserGraduate },
+  { value: 10, label: "দেশ", icon: FaGlobe },
+  { value: 5, label: "শিক্ষক", icon: FaChalkboardTeacher },
+  { value: 20, label: "কোর্স", icon: FaBookOpen },
 ];
 
 // ০ থেকে target সংখ্যা পর্যন্ত count-up
@@ -41,22 +47,27 @@ function CountUp({ to, duration = 2 }) {
 export default function StatsBar() {
   return (
     <section className="w-full bg-[#062B1E] text-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-10 md:py-14">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10">
-          {stats.map((stat, i) => (
-            <div
-              key={stat.label}
-              className="relative flex flex-col items-center text-center"
-            >
-              {i !== 0 && (
-                <span className="hidden md:block absolute -left-2 top-1/2 -translate-y-1/2 h-12 w-px bg-white/10" />
-              )}
-              <p className="text-3xl md:text-4xl font-extrabold text-secondary mb-1">
-                <CountUp to={stat.value} />
-              </p>
-              <p className="text-sm md:text-base text-white/70">{stat.label}</p>
-            </div>
-          ))}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          {stats.map((stat) => {
+            const Icon = stat.icon;
+            return (
+              <div
+                key={stat.label}
+                className="flex flex-col items-center text-center gap-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm p-6 transition-all duration-300 hover:bg-white/10 hover:scale-[1.02]"
+              >
+                <div className="w-12 h-12 rounded-full bg-secondary/15 flex items-center justify-center">
+                  <Icon className="w-6 h-6 text-secondary" />
+                </div>
+                <p className="text-3xl md:text-4xl font-extrabold text-white leading-none">
+                  <CountUp to={stat.value} />
+                </p>
+                <p className="text-sm md:text-base text-white/70">
+                  {stat.label}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

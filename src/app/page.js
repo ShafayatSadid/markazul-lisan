@@ -1,12 +1,29 @@
+// app/page.js
 import HeroCarousel from "@/components/home/HeroCarousel";
 import StatsBar from "@/components/home/StatsBar";
-import Image from "next/image";
+import FeaturedCourses from "@/components/home/FeaturedCourses";
 
-export default function Home() {
+async function getFeaturedCourses() {
+  try {
+    const res = await fetch(`${process.env.BACKEND_URL}/courses?featured=true`, {
+      next: { revalidate: 60 },
+    });
+    if (!res.ok) return [];
+    return res.json();
+  } catch (err) {
+    console.error("getFeaturedCourses error:", err.message);
+    return [];
+  }
+}
+
+export default async function Home() {
+  const courses = await getFeaturedCourses();
+
   return (
-    <div className="">
+    <main>
       <HeroCarousel />
       <StatsBar />
-    </div>
+      <FeaturedCourses courses={courses.slice(0, 3)} />
+    </main>
   );
 }
