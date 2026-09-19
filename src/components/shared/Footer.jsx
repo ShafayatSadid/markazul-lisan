@@ -32,12 +32,11 @@ const socialLinks = [
 
 const Footer = () => {
     return (
-        <footer className="w-full bg-[#062B1E] text-white">
+        <footer className="w-full bg-primary-deep text-primary-deep-foreground">
             <div className="max-w-7xl mx-auto px-6 lg:px-8 py-14">
-                {/* Top grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
-                    {/* Column 1 — Logo + Description + Social */}
+                    {/* Column 1 */}
                     <div className="text-center sm:text-left">
                         <Link href="/">
                             <h2 className="text-2xl font-extrabold tracking-tight mb-4">
@@ -45,7 +44,7 @@ const Footer = () => {
                                 <span className="text-secondary">লিসান</span>
                             </h2>
                         </Link>
-                        <p className="text-sm text-white/70 leading-relaxed mb-6">
+                        <p className="text-sm text-primary-deep-foreground/70 leading-relaxed mb-6">
                             প্রবাসী বাংলাদেশিদের জন্য ইসলামিক শিক্ষা প্ল্যাটফর্ম।
                             Europe, America, Middle East যেখানেই থাকুন — ঘরে বসে শিখুন।
                         </p>
@@ -57,7 +56,7 @@ const Footer = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label={label}
-                                    className="w-9 h-9 rounded-full flex items-center justify-center bg-white/10 hover:bg-secondary hover:text-[#062B1E] transition-colors duration-200"
+                                    className="w-9 h-9 rounded-full flex items-center justify-center bg-primary-deep-foreground/10 hover:bg-secondary hover:text-primary-deep transition-colors duration-200"
                                 >
                                     <Icon className="w-4 h-4" />
                                 </a>
@@ -65,7 +64,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Column 2 — Quick Links */}
+                    {/* Column 2 */}
                     <div className="text-center sm:text-left">
                         <h3 className="text-lg font-bold mb-4 text-secondary">দ্রুত লিংক</h3>
                         <ul className="space-y-2.5">
@@ -73,7 +72,7 @@ const Footer = () => {
                                 <li key={link.href}>
                                     <Link
                                         href={link.href}
-                                        className="text-sm text-white/70 hover:text-secondary transition"
+                                        className="text-sm text-primary-deep-foreground/70 hover:text-secondary transition"
                                     >
                                         {link.label}
                                     </Link>
@@ -82,7 +81,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Column 3 — Other Links */}
+                    {/* Column 3 */}
                     <div className="text-center sm:text-left">
                         <h3 className="text-lg font-bold mb-4 text-secondary">অন্যান্য</h3>
                         <ul className="space-y-2.5">
@@ -90,7 +89,7 @@ const Footer = () => {
                                 <li key={link.href}>
                                     <Link
                                         href={link.href}
-                                        className="text-sm text-white/70 hover:text-secondary transition"
+                                        className="text-sm text-primary-deep-foreground/70 hover:text-secondary transition"
                                     >
                                         {link.label}
                                     </Link>
@@ -99,34 +98,33 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Column 4 — Contact + Newsletter */}
+                    {/* Column 4 */}
                     <div className="text-center sm:text-left">
                         <h3 className="text-lg font-bold mb-4 text-secondary">যোগাযোগ</h3>
                         <ul className="space-y-3 mb-6">
-                            <li className="flex items-center justify-center sm:justify-start gap-3 text-sm text-white/70">
+                            <li className="flex items-center justify-center sm:justify-start gap-3 text-sm text-primary-deep-foreground/70">
                                 <MdEmail className="w-4 h-4 text-secondary flex-shrink-0" />
                                 <span>info@markazullisan.com</span>
                             </li>
-                            <li className="flex items-center justify-center sm:justify-start gap-3 text-sm text-white/70">
+                            <li className="flex items-center justify-center sm:justify-start gap-3 text-sm text-primary-deep-foreground/70">
                                 <MdPhone className="w-4 h-4 text-secondary flex-shrink-0" />
                                 <span>+880 1000-000000</span>
                             </li>
-                            <li className="flex items-center justify-center sm:justify-start gap-3 text-sm text-white/70">
+                            <li className="flex items-center justify-center sm:justify-start gap-3 text-sm text-primary-deep-foreground/70">
                                 <MdLocationOn className="w-4 h-4 text-secondary flex-shrink-0" />
                                 <span>Dhaka, Bangladesh</span>
                             </li>
                         </ul>
 
-                        {/* Newsletter */}
-                        <form className="flex items-center gap-2 bg-white/10 rounded-full p-1 pl-4">
+                        <form className="flex items-center gap-2 bg-primary-deep-foreground/10 rounded-full p-1 pl-4">
                             <input
                                 type="email"
                                 placeholder="আপনার ইমেইল"
-                                className="flex-1 bg-transparent text-sm text-white placeholder:text-white/50 outline-none py-2 min-w-0"
+                                className="flex-1 bg-transparent text-sm text-primary-deep-foreground placeholder:text-primary-deep-foreground/50 outline-none py-2 min-w-0"
                             />
                             <button
                                 type="submit"
-                                className="bg-secondary hover:bg-primary text-[#062B1E] font-semibold text-sm px-4 py-2 rounded-full transition whitespace-nowrap cursor-pointer"
+                                className="bg-secondary hover:bg-secondary/80 text-primary-deep font-semibold text-sm px-4 py-2 rounded-full transition whitespace-nowrap cursor-pointer"
                             >
                                 সাবস্ক্রাইব
                             </button>
@@ -134,13 +132,12 @@ const Footer = () => {
                     </div>
                 </div>
 
-
                 {/* Bottom bar */}
-                <div className="border-t border-white/10 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
-                    <p className="text-sm text-white/60">
+                <div className="border-t border-primary-deep-foreground/10 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+                    <p className="text-sm text-primary-deep-foreground/60">
                         © {new Date().getFullYear()} Markazul Lisan. All rights reserved.
                     </p>
-                    <p className="text-sm text-white/60 flex items-center gap-2">
+                    <p className="text-sm text-primary-deep-foreground/60 flex items-center gap-2">
                         Design & development by{" "}
                         <a
                             href="https://github.com/ShafayatSadid"

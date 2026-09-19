@@ -9,7 +9,7 @@ export default function CourseCard({ course }) {
       <div className="flex flex-col h-full rounded-2xl overflow-hidden bg-surface border border-border transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg">
 
         {/* Image / Placeholder */}
-        <div className="relative aspect-video w-full bg-primary/10 flex items-center justify-center overflow-hidden">
+        <div className="relative aspect-video w-full bg-secondary/15 flex items-center justify-center overflow-hidden">
           {course.image ? (
             <Image
               src={course.image}
@@ -19,13 +19,13 @@ export default function CourseCard({ course }) {
               className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
           ) : (
-            <FaBookOpen className="w-12 h-12 text-primary/40" />
+            <FaBookOpen className="w-12 h-12 text-secondary/50" />
           )}
         </div>
 
         {/* Content */}
         <div className="flex flex-col flex-1 p-5">
-          <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+          <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-secondary transition-colors">
             {course.name}
           </h3>
 
@@ -42,7 +42,7 @@ export default function CourseCard({ course }) {
             </p>
           )}
 
-          <span className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-primary">
+          <span className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-secondary group-hover:text-primary transition-colors">
             বিস্তারিত দেখুন
             <FaArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
           </span>

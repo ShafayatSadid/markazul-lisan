@@ -2,28 +2,25 @@
 import HeroCarousel from "@/components/home/HeroCarousel";
 import StatsBar from "@/components/home/StatsBar";
 import FeaturedCourses from "@/components/home/FeaturedCourses";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
+import FeaturedTeachers from "@/components/home/FeaturedTeachers";
 
-async function getFeaturedCourses() {
-  try {
-    const res = await fetch(`${process.env.BACKEND_URL}/courses?featured=true`, {
-      next: { revalidate: 60 },
-    });
-    if (!res.ok) return [];
-    return res.json();
-  } catch (err) {
-    console.error("getFeaturedCourses error:", err.message);
-    return [];
-  }
-}
+import { getFeaturedCourses } from "@/lib/api/courses";
+import { getFeaturedTeachers } from "@/lib/api/teachers";
 
 export default async function Home() {
-  const courses = await getFeaturedCourses();
+  const [courses, teachers] = await Promise.all([
+    getFeaturedCourses(),
+    getFeaturedTeachers(),
+  ]);
 
   return (
     <main>
       <HeroCarousel />
       <StatsBar />
       <FeaturedCourses courses={courses.slice(0, 3)} />
+      <WhyChooseUs />
+      <FeaturedTeachers teachers={teachers.slice(0, 3)} />
     </main>
   );
 }

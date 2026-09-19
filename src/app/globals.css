@@ -9,6 +9,9 @@
 
   --primary: #0F6B4A;
   --primary-hover: #0B593D;
+  --primary-deep: #0A3D2A;
+  --primary-deep-foreground: #F1F5F2;
+
   --secondary: #C8A951;
   --text-muted: #68756E;
 
@@ -32,6 +35,9 @@
 
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
+  --color-primary-deep: var(--primary-deep);
+  --color-primary-deep-foreground: var(--primary-deep-foreground);
+
   --color-secondary: var(--secondary);
   --color-text-muted: var(--text-muted);
 
@@ -40,7 +46,7 @@
   --color-error: var(--error);
   --color-info: var(--info);
 }
- 
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -51,6 +57,9 @@
 
     --primary: #3BAA78;
     --primary-hover: #4FBE8B;
+    --primary-deep: #0F2A1E;
+    --primary-deep-foreground: #F1F5F2;
+
     --secondary: #D4B65A;
     --text-muted: #9AAEA4;
 
@@ -67,6 +76,8 @@ body {
   font-family: var(--font-hind);
 }
 
-h1, h2,h3{
+h1,
+h2,
+h3 {
   font-family: var(--font-hind);
 }
