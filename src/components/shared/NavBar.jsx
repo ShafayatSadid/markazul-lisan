@@ -134,7 +134,7 @@ const NavBar = () => {
       <div className="flex-1 md:flex-none text-center md:text-left">
         <Link href="/">
           <h1 className="text-2xl font-extrabold tracking-tight leading-tight">
-            <span className="text-primary">মারকাজুল </span>
+            <span className="text-primary">মারকাযুল </span>
             <span className="text-secondary">লিসান</span>
           </h1>
         </Link>
