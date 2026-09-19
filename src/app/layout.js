@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col">
         <NavBar />
-        <main className="pt-20">{children}</main>
+        <main className="mt-16 md:mt-20">{children}</main>
       </body>
     </html>
   );
