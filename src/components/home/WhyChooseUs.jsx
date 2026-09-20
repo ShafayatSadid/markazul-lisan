@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
           className="text-center mb-10 md:mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">
-            কেন আমাদের বেছে নেবেন?
+            কেন <span className="text-primary">আমাদের</span> বেছে নেবেন?
           </h2>
           <p className="text-base md:text-lg text-text-muted max-w-2xl mx-auto">
             যা আমাদের আলাদা করে তোলে

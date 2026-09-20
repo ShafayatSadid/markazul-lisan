@@ -39,7 +39,7 @@ export default function FeaturedCourses({ courses }) {
           className="text-center mb-10 md:mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">
-            আমাদের কোর্সসমূহ
+            আমাদের <span className="text-primary">কোর্সসমূহ</span>
           </h2>
           <p className="text-base md:text-lg text-text-muted max-w-2xl mx-auto">
             অভিজ্ঞ শিক্ষকদের সাথে ঘরে বসে শিখুন

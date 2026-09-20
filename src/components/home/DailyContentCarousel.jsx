@@ -55,7 +55,7 @@ export default function DailyContentCarousel({ contents }) {
           className="text-center mb-10 md:mb-14"
         >
           <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">
-            দৈনন্দিন জীবনে ইসলামের আলো
+            দৈনন্দিন জীবনে <span className="text-primary">ইসলামের</span> আলো
           </h2>
           <p className="text-base md:text-lg text-text-muted max-w-2xl mx-auto">
             কুরআন ও হাদিস থেকে প্রতিদিনের শিক্ষা

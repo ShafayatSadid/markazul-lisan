@@ -48,7 +48,7 @@
 }
 
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0B1511;
     --foreground: #F1F5F2;
@@ -68,7 +68,7 @@
     --error: #E56B6B;
     --info: #5B9BC2;
   }
-}
+} */
 
 body {
   background: var(--background);

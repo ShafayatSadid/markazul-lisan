@@ -32,7 +32,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en"
+      lang="en" 
       className={`${hindSiliguri.variable} ${notoSerifBengali.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
