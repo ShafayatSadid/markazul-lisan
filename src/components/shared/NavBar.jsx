@@ -15,16 +15,18 @@ const primaryLinks = [
   { href: "/", label: "হোম" },
   { href: "/courses", label: "কোর্স" },
   { href: "/teachers", label: "শিক্ষক" },
-  { href: "/books", label: "বই" },
+  
+  { href: "/about", label: "আমাদের সম্পর্কে" },
+  { href: "/students", label: "শিক্ষার্থী" },
   { href: "/blog", label: "ব্লগ" },
 ];
 
 const moreLinks = [
-  { href: "/about", label: "আমাদের সম্পর্কে" },
-  { href: "/admission", label: "ভর্তি + নিয়মাবলী" },
-  { href: "/students", label: "শিক্ষার্থী" },
+  
+  { href: "/admission", label: "ভর্তি + নিয়মাবলী" }, 
   { href: "/results", label: "ফলাফল" },
   { href: "/contact", label: "যোগাযোগ" },
+  { href: "/books", label: "বই" },
 ];
 
 const NavBar = () => {

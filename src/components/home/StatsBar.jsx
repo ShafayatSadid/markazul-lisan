@@ -45,23 +45,23 @@ function CountUp({ to, duration = 2 }) {
 
 export default function StatsBar() {
   return (
-    <section className="w-full bg-primary-deep text-primary-deep-foreground">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16">
+    <section className="w-full bg-surface py-12 md:py-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {stats.map((stat) => {
             const Icon = stat.icon;
             return (
               <div
                 key={stat.label}
-                className="flex flex-col items-center text-center gap-3 rounded-2xl bg-primary-deep-foreground/5 border border-primary-deep-foreground/10 backdrop-blur-sm p-6 transition-all duration-300 hover:bg-primary-deep-foreground/10 hover:scale-[1.02]"
+                className="flex flex-col items-center text-center gap-3 rounded-2xl bg-secondary/20 p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
               >
-                <div className="w-12 h-12 rounded-full bg-secondary/15 flex items-center justify-center">
-                  <Icon className="w-6 h-6 text-secondary" />
+                <div className="w-12 h-12 rounded-full bg-primary/15 flex items-center justify-center">
+                  <Icon className="w-6 h-6 text-primary" />
                 </div>
-                <p className="text-3xl md:text-4xl font-extrabold text-primary-deep-foreground leading-none">
+                <p className="text-3xl md:text-4xl font-extrabold text-primary leading-none">
                   <CountUp to={stat.value} />
                 </p>
-                <p className="text-sm md:text-base text-primary-deep-foreground/70">
+                <p className="text-sm md:text-base text-primary/80">
                   {stat.label}
                 </p>
               </div>
