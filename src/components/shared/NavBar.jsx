@@ -123,9 +123,9 @@ const NavBar = () => {
         ))}
 
         <li className="mt-6">
-          <Link href="/admission" onClick={closeMenu}>
+          <Link href="/free-trial" onClick={closeMenu}>
             <Button className="w-full bg-primary hover:bg-primary-hover text-white font-semibold px-5 py-2.5 rounded-full shadow-md transition-all duration-200">
-              ভর্তি হোন
+              ফ্রি ট্রায়াল ক্লাস
             </Button>
           </Link>
         </li>
@@ -164,9 +164,9 @@ const NavBar = () => {
       {/* Right Side */}
       <div className="flex items-center gap-4">
         <div className="hidden md:block">
-          <Link href="/admission">
+          <Link href="/free-trial">
             <Button className="bg-primary hover:bg-primary-hover text-white font-semibold px-5 py-2.5 rounded-full shadow-md transition-all duration-200 hover:scale-105">
-              ভর্তি হোন
+              ফ্রি ট্রায়াল ক্লাস
             </Button>
           </Link>
         </div>

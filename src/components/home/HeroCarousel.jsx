@@ -21,15 +21,15 @@ const slides = [
     image: "/images/slide-2.webp",
     title: "কুরআন শিখুন ঘরে বসে",
     subtitle: "অভিজ্ঞ শিক্ষকদের সাথে এক-এক করে",
-    ctaText: "ভর্তি হোন",
-    ctaHref: "/admission",
+    ctaText: "ফ্রি ট্রায়াল ক্লাস",
+    ctaHref: "/free-trial",
   },
   {
     image: "/images/slide-3.webp",
     title: "১০০+ শিক্ষার্থী সফলভাবে শিখছে",
     subtitle: "আলহামদুলিল্লাহ",
-    ctaText: "ফলাফল দেখুন",
-    ctaHref: "/results",
+    ctaText: "শিক্ষার্থীদের দেখুন",
+    ctaHref: "/students",
   },
 ];
 

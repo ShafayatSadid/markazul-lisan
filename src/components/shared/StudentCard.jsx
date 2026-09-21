@@ -49,9 +49,9 @@ export default function StudentCard({ student }) {
 
       {/* Country */}
       {student.country && (
-        <div className="flex items-center gap-2 text-sm text-text-muted">
-          <FaGlobe className="w-3.5 h-3.5 text-secondary" />
-          <span>{student.country}</span>
+        <div className="flex items-center gap-2 text-text-muted">
+          <div><FaGlobe className="w-3.5 h-3.5 text-secondary" /></div>
+          <div>{student.country}</div>
         </div>
       )}
 
