@@ -3,11 +3,11 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion } from "motion/react";
-import { FaCalendarAlt, FaArrowRight, FaBookOpen } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
+import BlogCard from "@/components/shared/BlogCard";
 
 export default function FeaturedBlogs({ blogs }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -77,55 +77,14 @@ export default function FeaturedBlogs({ blogs }) {
         >
           <div ref={emblaRef} className="overflow-hidden">
             <div className="flex -ml-6">
-              {blogs.map((blog) => {
-                const date = blog.createdAt
-                  ? new Date(blog.createdAt).toISOString().slice(0, 10)
-                  : "";
-
-                return (
-                  <div
-                    key={blog._id}
-                    className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.3333%] min-w-0 pl-6"
-                  >
-                    <Link
-                      href={`/blog/${blog._id}`}
-                      className="block group h-full"
-                    >
-                      <div className="flex flex-col h-full rounded-2xl overflow-hidden bg-surface border border-border transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-lg">
-
-                        {/* Image */}
-                        <div className="relative aspect-video w-full bg-secondary/10 flex items-center justify-center overflow-hidden">
-                          {blog.image ? (
-                            <Image
-                              src={blog.image}
-                              alt={blog.title}
-                              fill
-                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                              className="object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
-                          ) : (
-                            <FaBookOpen className="w-12 h-12 text-secondary/40" />
-                          )}
-                        </div>
-
-                        {/* Content */}
-                        <div className="flex flex-col flex-1 p-6">
-                          {date && (
-                            <div className="flex items-center gap-2 text-xs text-text-muted mb-3">
-                              <FaCalendarAlt className="w-3.5 h-3.5 text-secondary" />
-                              <span>{date}</span>
-                            </div>
-                          )}
-
-                          <h3 className="text-base md:text-lg font-bold text-foreground line-clamp-2 group-hover:text-secondary transition-colors">
-                            {blog.title}
-                          </h3>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                );
-              })}
+              {blogs.map((blog) => (
+                <div
+                  key={blog._id}
+                  className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.3333%] min-w-0 pl-6"
+                >
+                  <BlogCard blog={blog} />
+                </div>
+              ))}
             </div>
           </div>
         </motion.div>
