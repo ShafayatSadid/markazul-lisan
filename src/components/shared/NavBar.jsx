@@ -19,14 +19,13 @@ const primaryLinks = [
   { href: "/about", label: "আমাদের সম্পর্কে" },
   { href: "/students", label: "শিক্ষার্থী" },
   { href: "/blog", label: "ব্লগ" },
+  { href: "/books", label: "বই" },
 ];
 
 const moreLinks = [
   
-  { href: "/admission", label: "ভর্তি + নিয়মাবলী" }, 
-  { href: "/results", label: "ফলাফল" },
   { href: "/contact", label: "যোগাযোগ" },
-  { href: "/books", label: "বই" },
+  
 ];
 
 const NavBar = () => {
@@ -159,31 +158,7 @@ const NavBar = () => {
           </li>
         ))}
 
-        {/* More dropdown */}
-        <li>
-          <Dropdown>
-            <Dropdown.Trigger className="cursor-pointer">
-              <span className="flex items-center gap-1 text-sm font-semibold text-foreground hover:text-primary transition">
-                আরও
-                <IoChevronDown className="w-4 h-4" />
-              </span>
-            </Dropdown.Trigger>
-            <Dropdown.Popover className="bg-surface border border-border shadow-2xl rounded-2xl p-0 min-w-[200px]">
-              <Dropdown.Menu>
-                {moreLinks.map((link) => (
-                  <Dropdown.Item
-                    key={link.href}
-                    id={link.href}
-                    textValue={link.label}
-                    href={link.href}
-                  >
-                    <Label className="text-foreground">{link.label}</Label>
-                  </Dropdown.Item>
-                ))}
-              </Dropdown.Menu>
-            </Dropdown.Popover>
-          </Dropdown>
-        </li>
+        
       </ul>
 
       {/* Right Side */}
