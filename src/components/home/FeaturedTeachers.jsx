@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { FaArrowRight } from "react-icons/fa";
-import TeacherCard from "./TeacherCard";
+import TeacherCard from "../shared/TeacherCard";
 
 const container = {
   hidden: { opacity: 0 },

@@ -133,7 +133,7 @@ export default function FeaturedBlogs({ blogs }) {
         {/* Arrows + Dots */}
         {scrollSnaps.length > 1 && (
           <div className="flex flex-col items-center gap-6 mt-10">
-            <div className="flex items-center gap-3">
+            <div className="hidden md:flex items-center gap-3">
               <button
                 onClick={scrollPrev}
                 aria-label="Previous blogs"
