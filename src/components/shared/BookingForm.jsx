@@ -14,10 +14,12 @@ import {
   Button,
 } from "@heroui/react";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function BookingForm({ courses = [], defaultCourse = "" }) {
   const [loading, setLoading] = useState(false);
   const [course, setCourse] = useState(defaultCourse);
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -52,9 +54,10 @@ export default function BookingForm({ courses = [], defaultCourse = "" }) {
       const result = await res.json();
 
       if (result.success) {
-        toast.success("বার্তা পাঠানো হয়েছে! আমরা শীঘ্রই যোগাযোগ করব।");
+        toast.success("আপনার আবেদন গ্রহণ করা হয়েছে! আমরা শীঘ্রই যোগাযোগ করব।");
         e.target.reset();
         setCourse(defaultCourse);
+        router.push("/");
       } else {
         toast.error(result.message || "কিছু একটা সমস্যা হয়েছে।");
       }

@@ -14,10 +14,12 @@ import {
   Button,
 } from "@heroui/react";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function FreeTrialForm({ courses = [] }) {
   const [loading, setLoading] = useState(false);
   const [course, setCourse] = useState("");
+const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,6 +55,7 @@ export default function FreeTrialForm({ courses = [] }) {
         toast.success("ট্রায়াল ক্লাসের অনুরোধ পাঠানো হয়েছে!");
         e.target.reset();
         setCourse("");
+        router.push("/");
       } else {
         toast.error(result.message || "কিছু একটা সমস্যা হয়েছে।");
       }
