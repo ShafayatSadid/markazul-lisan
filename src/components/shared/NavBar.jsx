@@ -5,28 +5,23 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { HiMenuAlt1 } from "react-icons/hi";
-import { IoClose, IoChevronDown } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 import { Avatar, Button, Dropdown, Label } from "@heroui/react";
 import { ArrowRightFromSquare, Persons } from "@gravity-ui/icons";
 
-// import { authClient } from "@/lib/auth-client";
+import { authClient } from "@/lib/auth-client";
 
 const primaryLinks = [
   { href: "/", label: "হোম" },
   { href: "/courses", label: "কোর্স" },
   { href: "/teachers", label: "শিক্ষক" },
-  
   { href: "/about", label: "আমাদের সম্পর্কে" },
   { href: "/students", label: "শিক্ষার্থী" },
   { href: "/blog", label: "ব্লগ" },
   { href: "/books", label: "বই" },
 ];
 
-const moreLinks = [
-  
-  { href: "/contact", label: "যোগাযোগ" },
-  
-];
+const moreLinks = [{ href: "/contact", label: "যোগাযোগ" }];
 
 const NavBar = () => {
   const sideMenuRef = useRef(null);
@@ -34,8 +29,8 @@ const NavBar = () => {
   const router = useRouter();
   const pathname = usePathname();
 
-//   const { data: session } = authClient.useSession();
-  const user = null
+  const { data: session } = authClient.useSession();
+  const user = session?.user;
 
   const openMenu = () => {
     if (sideMenuRef.current) {
@@ -157,8 +152,6 @@ const NavBar = () => {
             </Link>
           </li>
         ))}
-
-        
       </ul>
 
       {/* Right Side */}
@@ -171,7 +164,7 @@ const NavBar = () => {
           </Link>
         </div>
 
-        {/* Admin profile dropdown */}
+        {/* User Avatar + Dropdown (শুধু login থাকলে) */}
         {user ? (
           <Dropdown>
             <Dropdown.Trigger className="rounded-full cursor-pointer">
@@ -184,6 +177,7 @@ const NavBar = () => {
             </Dropdown.Trigger>
 
             <Dropdown.Popover className="bg-surface border border-border shadow-2xl rounded-2xl p-0 min-w-[220px]">
+              {/* User info header */}
               <div className="px-4 pt-4 pb-3 border-b border-border">
                 <div className="flex items-center gap-3">
                   <Avatar size="sm">
@@ -204,17 +198,21 @@ const NavBar = () => {
               </div>
 
               <Dropdown.Menu>
-                <Dropdown.Item
-                  id="dashboard"
-                  textValue="Dashboard"
-                  href="/dashboard"
-                >
-                  <div className="flex items-center gap-3">
-                    <Persons className="size-4 text-text-muted" />
-                    <Label className="text-foreground">ড্যাশবোর্ড</Label>
-                  </div>
-                </Dropdown.Item>
+                {/* Admin Panel — শুধু admin-এর জন্য */}
+                {user?.role === "admin" && (
+                  <Dropdown.Item
+                    id="admin"
+                    textValue="Admin Panel"
+                    href="/admin"
+                  >
+                    <div className="flex items-center gap-3">
+                      <Persons className="size-4 text-text-muted" />
+                      <Label className="text-foreground">অ্যাডমিন প্যানেল</Label>
+                    </div>
+                  </Dropdown.Item>
+                )}
 
+                {/* Logout — সব user-এর জন্য */}
                 <Dropdown.Item
                   id="logout"
                   textValue="Logout"
