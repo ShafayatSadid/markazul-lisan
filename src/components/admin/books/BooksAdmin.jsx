@@ -3,6 +3,8 @@
 
 import { useState, useEffect, useCallback } from "react";
 import toast from "react-hot-toast";
+import ImageUpload from "@/components/shared/ImageUpload";
+import FileUpload from "@/components/shared/FileUpload";
 import {
   FaPlus,
   FaEdit,
@@ -340,35 +342,19 @@ export default function BooksAdmin() {
                 />
               </div>
 
-              {/* Image */}
-              <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-semibold text-foreground">
-                  কভার ইমেজ URL
-                </label>
-                <input
-                  type="text"
-                  value={form.image}
-                  onChange={(e) => setForm({ ...form, image: e.target.value })}
-                  placeholder="https://..."
-                  className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground placeholder:text-text-muted/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition"
-                />
-              </div>
+              {/* Cover Image Upload */}
+              <ImageUpload
+                label="বইয়ের কভার"
+                value={form.image}
+                onChange={(url) => setForm({ ...form, image: url })}
+              />
 
-              {/* Download URL */}
-              <div className="flex flex-col gap-1.5">
-                <label className="text-sm font-semibold text-foreground">
-                  ডাউনলোড লিংক
-                </label>
-                <input
-                  type="text"
-                  value={form.downloadUrl}
-                  onChange={(e) =>
-                    setForm({ ...form, downloadUrl: e.target.value })
-                  }
-                  placeholder="https://... (PDF লিংক)"
-                  className="w-full px-4 py-2.5 rounded-xl border border-border bg-background text-foreground placeholder:text-text-muted/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition"
-                />
-              </div>
+              {/* PDF File Upload */}
+              <FileUpload
+                label="বইয়ের PDF ফাইল"
+                value={form.downloadUrl}
+                onChange={(url) => setForm({ ...form, downloadUrl: url })}
+              />
 
               {/* File size + Pages */}
               <div className="grid grid-cols-2 gap-4">

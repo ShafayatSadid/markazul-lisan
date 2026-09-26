@@ -14,6 +14,7 @@ const quickLinks = [
     { href: "/teachers", label: "শিক্ষক" },
     { href: "/books", label: "বই" },
     { href: "/blog", label: "ব্লগ" },
+    { href: "/login", label: "লগইন" },
 ];
 
 const otherLinks = [
