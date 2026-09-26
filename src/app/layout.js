@@ -1,8 +1,5 @@
 import { Hind_Siliguri, Noto_Serif_Bengali, Inter } from 'next/font/google';
 import "./globals.css";
-import NavBar from '@/components/shared/NavBar';
-import Footer from '@/components/shared/Footer';
-import CTASection from '@/components/shared/CTASection';
 import { Toaster } from 'react-hot-toast';
 
 const hindSiliguri = Hind_Siliguri({
@@ -40,11 +37,10 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
 
         <Toaster/>
-        <NavBar />
-        <main className="mt-16 md:mt-20">{children}</main>
+        
+        <main className="">{children}</main>
 
-        <CTASection />
-        <Footer/>
+        
         
       </body>
     </html>
